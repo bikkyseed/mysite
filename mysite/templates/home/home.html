@@ -1,39 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %} Home {% endblock title %}
-{% block homeactive %} active {% endblock homeactive %}
-
-{% block body %}
-<div class="container">
-<div class="jumbotron">
-    <h1 class="display-4">Welcome to the GameShow</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="/blog" role="button">Important Informations</a>
-    </p>
-  </div>
-</div> 
-
-<div class="container">
-    <h2>Live Update</h2>
-    {% for post in allPosts %}
-    <div class="card flex-md-row mb-4 box-shadow h-md-250">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-primary">Article by {{post.author}}</strong>
-          <h3 class="mb-0">
-           
-          </h3>
-          <h3 class="mb-0">
-            <a class="text-dark" href="/blog/{{post.slug}}">{{post.title}}</a>
-          </h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto"></a>
-            <p class="card-text mb-auto">{{post.content| truncatechars:150}}</p>
+{% block body  %}
+<section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">We Design
+          <br class="hidden lg:inline-block">What you think
+        </h1>
+        <p class="mb-8 leading-relaxed">This content is Ai Genrated and the image will change dynamically so relaxe and enjoy surfing the web </p>
+        <div class="flex justify-center">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Learn more</button>
+          <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">take charge</button>
         </div>
-        
       </div>
-    {% endfor %} 
-</div>
-{% endblock body %}
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="hero" src="https://images.unsplash.com/1/type-away.jpg?q=80&fm=jpg&w=1080&fit=max">
+      </div>
+    </div>
+  </section>
+
+
+{% endblock  %}
